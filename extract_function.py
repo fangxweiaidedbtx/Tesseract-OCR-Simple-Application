@@ -164,7 +164,7 @@ def ocr_images(cropped_images):
     if isinstance(cropped_images, list):
         text = []
         for cropped in cropped_images:
-            text.append(pytesseract.image_to_string(cropped, ))
+            text.append(pytesseract.image_to_string(cropped ))
         return text
     else:
         text = pytesseract.image_to_string(cropped_images)
@@ -173,7 +173,7 @@ def ocr_images(cropped_images):
 
 def main():
     model_path = "frozen_east_text_detection.pb"
-    image_path = "test2.jpg"
+    image_path = "test4.png"
 
     net = load_model(model_path)
     image, blob = preprocess_image(image_path)
@@ -192,6 +192,10 @@ def main():
     cv2.imshow("Text Detection", image)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
+    # for i in range(len(cropped_images)):
+    #     cv2.imshow("Cropped Text", cropped_images[i])
+    #     cv2.waitKey(0)
+    #     cv2.destroyAllWindows()
     print(text)
 
 

@@ -17,7 +17,7 @@ def preprocess_image(image_path):
     return image, blob
 
 
-def detect_text(net, image_blob):
+def detect_by_east(net, image_blob):
     """
     检测文本区域
     :param net: 模型
@@ -27,6 +27,7 @@ def detect_text(net, image_blob):
     net.setInput(image_blob)
     scores, geometry = net.forward(["feature_fusion/Conv_7/Sigmoid", "feature_fusion/concat_3"])
     return scores, geometry
+
 
 
 def extract_areas(scores, geometry, threshold=0.5):
@@ -79,12 +80,13 @@ def draw_rectangles(image, rects):
 
 
 def filter_duplicates(rects, confidences, threshold=0.9):
-    """过滤重复的矩形框，根据置信度阈值和重叠情况进行去重"""
-    # 函数用于从给定的矩形框列表中过滤掉重复的矩形框
-    # 参数:
-    # rects: 矩形框列表
-    # confidences: 对应每个矩形框的置信度列表
-    # threshold: 置信度的阈值，默认为0.9
+    """
+    过滤重复的矩形框，根据置信度阈值和重叠情况进行去重
+    :param rects:  矩形框列表
+    :param confidences: 对应每个矩形框的置信度列表
+    :param threshold: 置信度的阈值，默认为0.9
+    :return:  过滤后的矩形框列表
+    """
     filtered_rects = []  # 存储过滤后的矩形框
 
     for i in range(len(rects)):
@@ -125,6 +127,10 @@ def merge_rects(rect1, rect2):
     return (merged_x1, merged_y1, merged_x2, merged_y2)
 
 def is_overlap(rect1, rect2):
+    """
+    判断两个矩形框是否重叠
+    :return:  True or False
+    """
     x1_start, y1_start, x1_end, y1_end = rect1
     x2_start, y2_start, x2_end, y2_end = rect2
 
@@ -144,6 +150,13 @@ def is_overlap(rect1, rect2):
 
 
 def cut_images(image, rects, confidences=None):
+    """
+    裁剪图片
+    :param image:  图片
+    :param rects:  矩形框列表
+    :param confidences:  对应每个矩形框的置信度列表
+    :return:  裁剪后的图片列表
+    """
     result = []
     if confidences is not None:
         for (startX, startY, endX, endY), confidence in zip(rects, confidences):
@@ -171,15 +184,15 @@ def ocr_images(cropped_images):
         return text
 
 
-def main():
+def main_extract_by_east():
     model_path = "frozen_east_text_detection.pb"
-    image_path = "test4.png"
+    image_path = "test.jpg"
 
     net = load_model(model_path)
     image, blob = preprocess_image(image_path)
     if image is None:
         return
-    scores, geometry = detect_text(net, blob)
+    scores, geometry = detect_by_east(net, blob)
     rects, confidences = extract_areas(scores, geometry)
 
     filtered_rects = filter_duplicates(rects, confidences)
@@ -199,5 +212,21 @@ def main():
     print(text)
 
 
+# def main_extract_by_tesseraact():
+#     image_path = "test.jpg"
+#     image = cv2.imread(image_path)
+#     if image is None:
+#         return
+#     boxes = detect_by_tesseraact(image)
+#     hImg, wImg, _ = image.shape
+#     for box in boxes.splitlines():
+#         box = box.split(' ')
+#         x, y, w, h = int(box[1]), int(box[2]), int(box[3]), int(box[4])
+#         cv2.rectangle(image,(x,hImg-y),(w))
+#     cv2.imshow("Text Detection", image)
+#     cv2.waitKey(0)
+#     cv2.destroyAllWindows()
+
 if __name__ == "__main__":
-    main()
+    main_extract_by_east()
+    # main_extract_by_tesseraact()

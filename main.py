@@ -2,8 +2,6 @@ from preprocess import *
 
 if __name__ == '__main__':
     image_paths = ["test7.png"]
-    # 定义图片路径列表
-    # image_paths = ["test.jpg", "test2.jpg", "test3.png", "test4.png","test5.jpg"]
     # 遍历图片路径列表
     for i in image_paths:
         # 调用ocr函数，对图片进行识别，show_image参数设置为False，不显示识别结果

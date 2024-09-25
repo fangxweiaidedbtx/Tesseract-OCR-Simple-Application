@@ -30,9 +30,9 @@ This program utilizes Python and the pytesseract library to recognize text withi
 ## Results
 
 **Input Image**:
-![test7](D:\code\ocr\test7.png)
+![test7](test7.png)
 **Recognition Result**:
 
-![result](D:\code\ocr\result.png)
+![result](result.png)
 
 **Note**: This application performs better with English text. Chinese recognition is slightly less accurate, and artistic fonts are not supported.

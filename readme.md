@@ -32,11 +32,11 @@ pip install -r requirements.txt
 
 输入图片
 
-![1727271529335](C:\Users\19389\AppData\Local\Temp\1727271529335.png)
+![1727271529335](test7.png)
 
 识别结果
 
-![result](D:\code\ocr\result.png)
+![result](result.png)
 
 对英文支持更好，中文略有欠缺，不支持艺术字。
 

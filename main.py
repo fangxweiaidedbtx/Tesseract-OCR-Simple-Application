@@ -4,7 +4,7 @@ from preprocess import *
 import pathlib
 import cv2
 
-config_default = r'-l chi_sim+eng --psm 6'
+config_default = r'-l chi_sim+eng '
 
 
 def ocr(image_path):
@@ -15,15 +15,25 @@ def ocr(image_path):
     """
     if pathlib.Path(image_path).exists():
         img = cv2.imread(image_path)
-        cv2.imshow("draw picture", draw_by_tesseraact(img.copy(), config_default))
+        img = preprocess(img)
+        data = pytesseract.image_to_data(img, config=config_default)
+        text = ""
+        print(data.splitlines())
+        for  box in data.splitlines()[1:]:
+            box = box.split('\t')
+            if len(box) == 12:
+                x, y, w, h = int(box[6]), int(box[7]), int(box[8]), int(box[9])
+                cv2.rectangle(img, (x, y), (w + x, h + y), (0, 255, 0), 2)
+                if box[11] != '' and box[11] != '-1':
+                    text += box[11] + "\n"
+        cv2.imshow("draw picture", img)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
-        img = preprocess(img)
-        text = pytesseract.image_to_string(img[0], config=config_default)
         print(text)
         return text
     else:
         print("Error: Image not found")
+
 
 def read_text_from_image(image):
     """Reads text from an image file and outputs found text to text file"""
@@ -35,27 +45,30 @@ def read_text_from_image(image):
 
     rect_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (18, 18))
 
-    dilation = cv2.dilate(thresh, rect_kernel, iterations = 1)
+    dilation = cv2.dilate(thresh, rect_kernel, iterations=1)
 
     contours, hierachy = cv2.findContours(dilation, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
-
+    cv2.imshow("dilation", dilation)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
     image_copy = image.copy()
     text = ""
     for contour in contours:
         x, y, w, h = cv2.boundingRect(contour)
 
-        cropped = image_copy[y : y + h, x : x + w]
+        cropped = image_copy[y: y + h, x: x + w]
 
-        cv2.imshow("cropped",cropped)
+        cv2.imshow("cropped", cropped)
         cv2.waitKey(0)
 
-        text += pytesseract.image_to_string(cropped,config=config_default)
+        text += pytesseract.image_to_string(cropped, config=config_default)
         print(text)
     return text
 
+
 if __name__ == '__main__':
-    image_paths = ["test3.png"]
+    image_paths = ["test6.jpg"]
     # image_paths = ["test.jpg", "test2.jpg", "test3.png", "test4.png","test5.png","test6.jpg"]
     for i in image_paths:
-        # ocr(i)
-        read_text_from_image(cv2.imread(i))
+        ocr(i)
+        # read_text_from_image(cv2.imread(i))

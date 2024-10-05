@@ -1,0 +1,225 @@
+CDSS40'Assignment	1	-Text'Detection'from	
+JImasges"Using'OpenCV	
+Task-objective.	
+The-objective-of-this-assignment-is‘to-use-Google-Colab,-Jupyter:Notebook,-or-any-other-suitable-	
+tool-to-detect-text-from-images-using-OpenCV.-This-will-help-you-understand-the-concepts-of+	
+fundamental-Computer	Vision-algorithms-and-techniques,-evaluate-the-efficiency-and-	
+effectiveness-of-computer-vision-systems,and-apply-and-implement-thesetoals-and-techniques.-	
+Task-description:	
+1.-	Setup-Environment:	
+o-	Use-Google-Colab,-Jupyter:Notebook,-or-any-other-platform-yourare-comfortable	
+with..	
+o-+	
+Ensure-that-‘OpenCV-and-other-necessary'libraries-are-installed..	
+2.-	Load-an-Image:.	
+o.	Load-asample:image-containing-text.-Youcan-use-images-fromrvarious:sources*	
+like-scanned-documents,’street-signs,-or-any-image-with-clear-text..	
+3.-	Pre-process:the-Image:.	
+o-	Convert-the:image-to-grayscale..	
+o-+	
+Apply-necessary-image-processing-techniques-like-thresholding,-blurring,-oredge-	
+detection-to-enhance'text'visibility..	
+4,-	Text-Detection:.	
+o-	Use-OpenCv's‘text-detection-methods-such-as-the-EAST-text-detector,-or-any-	
+other-OpenCv-compatible-methods..	
+o-	Drawbounding-boxes-around-detected-text-areas..	
+5.-	Extract-and-Display-Text:.	
+o	
+Use-OCR-(Optical-Character-Recognition)-tools-like-Tesseract-to-extract-text-from:	
+the-detected:regions.	
+o-	Display-the-extracted-text-and-the-annotated-image-with-bounding-boxes..	
+6.-	Efficiency-and-Effectiveness-Evaluation:.	
+o-	Measure'the-performanceof-yourtext-detection:system..	
+o-	
+Discuss-the-efficiency-(speed)}-and-effectiveness-(accuracy)-of-your-approach..	
+o.	
+Suggest-potential-improvements..	
+Rubric.	
+ke	
+ 	 	
+ria.	Points	 	
+ 	 	
+\Understand-the-concepts-of-fundamental-Computer-Vision-algorithms-and-techniques|10%.	
+ 	 	
++-Demonstrates-a’clear-understanding-of:image-pre-processing-techniques.	
+ 	 	
+--Explains-the-chosen-text-detection-method-and-its-working..	
+ 	 	
+Evaluate-the-efficiency-and-effectiveness-of-computer-vision-systems.	10%,	
+ 	 	
+--Measures-and:reports-the-speed-of-the-text-detection-system.	
+ 	 	
+--Evaluates-the-accuracy-of-detected-text.	
+ 	 	
+-Provides‘a-discussion-on‘the:system's-strengths:and-weaknesses.	
+ 	 	
+Apply-and-implement-the-computer-vision-tools-and-techniques.	20%.	
+ 	 	
+rSuccessfully-loads-and-processes-the-image.	
+ 	 	
+rlmplements-text-detection-and-draws-bounding’boxes-correctly.	
+ 	 	
+--Uses-OCR-to-extract-and-display-text-fromimages.	
+ 	 	
+--Code-is-well-organized,-commented,-and-fallows-best-practices.	
+ 	 	Total-Points.	
+lov.	
+ 	 	 	 	 	 	 	 	 	 	 	 	 	
+ 	
+ 	 	
+Deliverables.	
+1.-	AJupyter:-Notebook-(or-equivalent)-with-your-code-and:in-line-explanations..	
+2.-	Images'used-for-testing..	
+3.-	A-brief-report-(1000-2000-words)-evaluating-the-performance-of-your-text-detection-	
+system..	
+Submission-Details:-.	
+CDSS40'Assignment	1	-Text'Detection'from	
+JImasges"Using'OpenCV	
+Task-objective.	
+The-objective-of-this-assignment-is‘to-use-Google-Colab,-Jupyter:Notebook,-or-any-other-suitable-	
+tool-to-detect-text-from-images-using-OpenCV.-This-will-help-you-understand-the-concepts-of+	
+fundamental-Computer	Vision-algorithms-and-techniques,-evaluate-the-efficiency-and-	
+effectiveness-of-computer-vision-systems,and-apply-and-implement-thesetoals-and-techniques.-	
+Task-description:	
+1.-	Setup-Environment:	
+o-	Use-Google-Colab,-Jupyter:Notebook,-or-any-other-platform-yourare-comfortable	
+with..	
+o-+	
+Ensure-that-‘OpenCV-and-other-necessary'libraries-are-installed..	
+2.-	Load-an-Image:.	
+o.	Load-asample:image-containing-text.-Youcan-use-images-fromrvarious:sources*	
+like-scanned-documents,’street-signs,-or-any-image-with-clear-text..	
+3.-	Pre-process:the-Image:.	
+o-	Convert-the:image-to-grayscale..	
+o-+	
+Apply-necessary-image-processing-techniques-like-thresholding,-blurring,-oredge-	
+detection-to-enhance'text'visibility..	
+4,-	Text-Detection:.	
+o-	Use-OpenCv's‘text-detection-methods-such-as-the-EAST-text-detector,-or-any-	
+other-OpenCv-compatible-methods..	
+o-	Drawbounding-boxes-around-detected-text-areas..	
+5.-	Extract-and-Display-Text:.	
+o	
+Use-OCR-(Optical-Character-Recognition)-tools-like-Tesseract-to-extract-text-from:	
+the-detected:regions.	
+o-	Display-the-extracted-text-and-the-annotated-image-with-bounding-boxes..	
+6.-	Efficiency-and-Effectiveness-Evaluation:.	
+o-	Measure'the-performanceof-yourtext-detection:system..	
+o-	
+Discuss-the-efficiency-(speed)}-and-effectiveness-(accuracy)-of-your-approach..	
+o.	
+Suggest-potential-improvements..	
+Rubric.	
+ke	
+ 	 	
+ria.	Points	 	
+ 	 	
+\Understand-the-concepts-of-fundamental-Computer-Vision-algorithms-and-techniques|10%.	
+ 	 	
++-Demonstrates-a’clear-understanding-of:image-pre-processing-techniques.	
+ 	 	
+--Explains-the-chosen-text-detection-method-and-its-working..	
+ 	 	
+Evaluate-the-efficiency-and-effectiveness-of-computer-vision-systems.	10%,	
+ 	 	
+--Measures-and:reports-the-speed-of-the-text-detection-system.	
+ 	 	
+--Evaluates-the-accuracy-of-detected-text.	
+ 	 	
+-Provides‘a-discussion-on‘the:system's-strengths:and-weaknesses.	
+ 	 	
+Apply-and-implement-the-computer-vision-tools-and-techniques.	20%.	
+ 	 	
+rSuccessfully-loads-and-processes-the-image.	
+ 	 	
+rlmplements-text-detection-and-draws-bounding’boxes-correctly.	
+ 	 	
+--Uses-OCR-to-extract-and-display-text-fromimages.	
+ 	 	
+--Code-is-well-organized,-commented,-and-fallows-best-practices.	
+ 	 	Total-Points.	
+lov.	
+ 	 	 	 	 	 	 	 	 	 	 	 	 	
+ 	
+ 	 	
+Deliverables.	
+1.-	AJupyter:-Notebook-(or-equivalent)-with-your-code-and:in-line-explanations..	
+2.-	Images'used-for-testing..	
+3.-	A-brief-report-(1000-2000-words)-evaluating-the-performance-of-your-text-detection-	
+system..	
+Submission-Details:-.	
+CDSS40'Assignment	1	-Text'Detection'from	
+JIJmasges"Using'OpenCV	
+Task-objective.	
+The-objective-of-this-assignment-is‘to-use-Google-Colab,-Jupyter:Notebook,-or-any-other-suitable-	
+tool-to-detect-text-from-images-using-OpenCV.-This-will-help-you-understand-the-concepts-of+	
+fundamental-Computer	Vision-algorithms-and-techniques,-evaluate-the-efficiency-and-	
+effectiveness-of-computer-vision-systems,-and-apply-and-implement-thesetoals-and-techniques.-	
+Task-description:	
+1.-	Setup-Environment:	
+o-	Use-Google-Colab,-Jupyter:Notebook,-or-any-otherplatform-yourare-comfortable:	
+with..	
+o-+	
+Ensure-that-OpenCV-and-other-necessary'libraries-are-installed..	
+2.-	Load-an-Image:.	
+o.	Load-asample:image-containing-text.-You-can-use-images-fromrvarious:sources*	
+like-scanned-documents,’street-signs,-or-any-image-with-clear-text..	
+3.-	Pre-process:the-Image:.	
+o-	Convert-the:image-to-grayscale..	
+o-+	
+Apply-necessary-image-processing-techniques-like-thresholding,-blurring,-oredge-	
+detection-to-enhance‘text'visibility..	
+4,-	Text-Detection:.	
+o-	Use-OpenCv's‘text-detection-methods-such-as-the-EAST-text-detector,-or-any-	
+other-OpenCV-compatible-methods..	
+o-	Drawbounding-boxes-around-detected-text-areas..	
+5.-	Extract-and-Display-Text:.	
+o	
+Use-OCR-(Optical-Character-Recognition)-tools-like-Tesseract-to-extract-text-from:	
+the-detected:regions.	
+o-	Display-the-extracted-text-and-the-annotated-image-with-bounding-boxes..	
+6.-	Efficiency-and-Effectiveness-Evaluation:.	
+o-	Measure'the:performance-of-yourtext-detection:system..	
+o-	
+Discuss-the-efficiency-(speed)}-and-effectiveness-(accuracy)-of-your-approach..	
+o.	
+Suggest-potential-improvements..	
+Rubric.	
+ke	
+ 	 	
+ria.	Points	 	
+ 	 	
+\Understand-the-concepts-of-fundamental-Computer-Vision-algorithms-and-techniques|[10%.	
+ 	 	
++-Demonstrates-arclear-understanding-of-image-pre-processing-techniques.	
+ 	 	
+--Explains-the-chosen-text-detection-method-and-its-working..	
+ 	 	
+Evaluate-the-efficiency-and-effectiveness-of-computer-vision-systems.	10%,	
+ 	 	
++-Measures-and:reports-the-speed-of-the-text-detection-system.	
+ 	 	
+--Evaluates-the-accuracy-of-detected-text.	
+ 	 	
+--Providesa-discussion-on'the:system's-strengths:and-weaknesses.	
+ 	 	
+Apply-and-implement-the-computer-vision-tools-and-techniques.	20%.	
+ 	 	
+rSuccessfully-loads-and-processes-the-image.	
+ 	 	
+rlmplements-text-detection-and-draws-bounding’boxes-correctly.	
+ 	 	
+--Uses-OCR-to-extract-and-display-text-fromimages.	
+ 	 	
+--Code-is-well-organized,-commented,-and-follows-best-practices.	
+ 	 	Total-Points.	
+lov.	
+ 	 	 	 	 	 	 	 	 	 	 	 	 	
+ 	
+ 	 	
+Deliverables.	
+1.-	AJupyter:-Notebook-(or-equivalent)-with-your-code-and:in-line-explanations..	
+2.-	Images'used-for-testing..	
+3.-	A-brief-report-(1000-2000-words)-evaluating-the-performance-of-your-text-detection-	
+system..	
+Submission-Details:-.	

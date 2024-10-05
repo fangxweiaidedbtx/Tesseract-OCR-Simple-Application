@@ -14,8 +14,8 @@ def preprocess(imgs):
 
     def process_image(image):
         gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)  # 灰度化
-        ret, thresh = cv2.threshold(gray_image, 0, 255, cv2.THRESH_BINARY_INV | cv2.THRESH_OTSU)  # 二值化
-        return gray_image
+        ret, thresh = cv2.threshold(gray_image, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)  # 二值化
+        return thresh
 
     if isinstance(imgs, list):
         # 如果imgs是列表类型，则对列表中的每个图像进行处理
